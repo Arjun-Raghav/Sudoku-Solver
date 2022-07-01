@@ -1,0 +1,31 @@
+<html>
+    <head>
+        
+        <title>Sudoku</title>
+
+        <link rel="stylesheet" href="sudoku.css">
+        <script src="sudoku.js"></script>
+      
+    </head>
+
+    <body>
+        <h1>Sudoku Solver</h1>
+        <p>Apart from given sample puzzles, you can create your own <br> puzzle by typing inputs and get answer by using solve button</p>
+       
+        <!-- 9x9 board -->
+        <div id="board"></div>
+        <br>
+        <div id="digits">
+        </div>
+      <input type="button" id="solveButton" value="Solve" onclick="loader()" class="buttons">
+      <input type="button" id="resetButton" value="Reset" class="buttons" onclick="reset()">
+      <input type="button" id="samp1" value="Sample1" class="buttons" onclick="Sample1()">
+ <input type="button" id="samp2" value="Sample2" class="buttons" onclick="Sample2()">
+      <input type="button" id="samp3" value="Sample3" class="buttons" onclick="Sample3()">
+     
+      
+
+    </body>
+
+
+</html>

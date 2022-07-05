@@ -17,6 +17,7 @@
           tile.setAttribute("inputmode","numeric");
           tile.setAttribute("autocomplete","off");
           tile.classList.add("tile");
+
             document.getElementById("board").append(tile);
         }
     }
@@ -125,6 +126,7 @@ function reset()
         for (let v = 0; v < 9; v++) {
          
              document.getElementById(u.toString() +v.toString()).value=null;
+             
         }
     }
 }
@@ -271,6 +273,69 @@ else
 }
 }
 
+function checkans(board)
+{ 
 
+     
+  
+    for (let u = 0; u <9; u++) {console.log(1)
+        for (let v = 0; v < 9; v++) {console.log(2)
+          if(board[u][v]!=0)
+          {      var t =board[u][v];
+          	      board[u][v]=0;
+          	if(!isSafe(board,u,v,t))
+          		{
+          			console.log(4)
+          		
+          			document.getElementById(u.toString() + v.toString()).setAttribute("style","color:red")
+          			console.log(5)
 
+          		}
+          	else
+          	{
+          		board[u][v]=t;
+          	}	
+          
+
+             
+        }
+          }
+    }
+
+}
+function check()
+{    let board = [ [ 3, 0, 6, 5, 0, 8, 4, 0, 0 ],
+              [ 5, 2, 0, 0, 0, 0, 0, 0, 0 ],
+              [ 0, 8, 7, 0, 0, 0, 0, 3, 1 ],
+              [ 0, 0, 3, 0, 1, 0, 0, 8, 0 ],
+              [ 9, 0, 0, 8, 6, 3, 0, 0, 5 ],
+              [ 0, 5, 0, 0, 9, 0, 6, 0, 0 ],
+              [ 1, 3, 0, 0, 0, 0, 2, 5, 0 ],
+              [ 0, 0, 0, 0, 0, 0, 0, 7, 4 ],
+              [ 0, 0, 5, 2, 0, 6, 3, 0, 0 ] ];
+  for (let u = 0; u <9; u++) {
+        for (let v = 0; v < 9; v++) {
+             if(document.getElementById(u.toString() +v.toString()).value!=null)
+             board[u][v]=document.getElementById(u.toString() +v.toString()).value;
+             else
+             	board[u][v]=0;
+
+          
+        }
+    }
+   checkans(board)
+}
+
+function decheck()
+{
+	  for (let u = 0; u <9; u++) {
+        for (let v = 0; v < 9; v++) {
+             if(document.getElementById(u.toString() +v.toString()).value!=null)
+             document.getElementById(u.toString() +v.toString()).setAttribute("style","color:black")
+             
+
+          
+        }
+    }
+}
 
